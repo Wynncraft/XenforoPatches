@@ -21,6 +21,11 @@
 1876	1859	  		}
 1877	1860	  
 1878		- 		return "{$imagePath}/xenforo/avatars/avatar_{$gender}{$size}.png";
-1861	+ 		$sizepx = XenForo_Model_Avatar::getSizeFromCode($size);
-1862	+ 
-1863	+ 		return "http://wynncraft.com/api/avatar/{$user['username']}/{$sizepx}.png";
+1869  +     		$username = $user['username'];
+1870  +
+1871  +		if($username == "" || empty($username)) {
+1872  +			$username = 'Steve';
+1873  +		}
+1874  +
+1875  +		$sizepx = XenForo_Model_Avatar::getSizeFromCode($size);
+1876  +		return "http://wynncraft.com/api/avatar/{$username}/{$sizepx}.png";
