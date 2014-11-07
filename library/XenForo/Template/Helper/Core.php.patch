@@ -28,4 +28,4 @@
 1873  +		}
 1874  +
 1875  +		$sizepx = XenForo_Model_Avatar::getSizeFromCode($size);
-1876  +		return "http://wynncraft.com/api/avatar/{$username}/{$sizepx}.png";
+1876  +		return "https://api.wynncraft.com/avatar/{$username}/{$sizepx}.png";
